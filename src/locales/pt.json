@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Início",
+    "guide": "Como abrir uma LLC",
+    "vs": "Comparar",
+    "book": "Agendar"
+  },
+  "hero": {
+    "eyebrow": "Não-residente? Bem-vindo.",
+    "headline": "Abra sua empresa nos EUA em 14 dias. Em português. Com humanos.",
+    "sub": "Somos a consultincusa. Ajudamos brasileiros a abrir LLC, conseguir EIN, abrir conta Mercury e ficar em compliance — em português, com WhatsApp humano e garantia de 14 dias.",
+    "cta_primary": "Agendar 15 min grátis",
+    "cta_secondary": "Ler o guia completo",
+    "trust": "✓ Garantia de 14 dias   ✓ Form 5472 incluído   ✓ Plano B se Mercury rejeitar   ✓ WhatsApp humano"
+  },
+  "form": {
+    "title": "Receba o guia + anchor no WhatsApp",
+    "first_name": "Primeiro nome",
+    "email": "Email",
+    "whatsapp": "WhatsApp (com DDI, ex: +55 11 ...)",
+    "country": "País de origem",
+    "language": "Idioma preferido",
+    "opt_in": "Sim, quero receber mensagens do meu anchor no WhatsApp.",
+    "submit": "Quero o guia",
+    "submitting": "Enviando...",
+    "success_title": "Olha seu WhatsApp em 2 minutos.",
+    "success_body": "Seu anchor vai te chamar logo. Procura uma mensagem de número americano — é a gente.",
+    "error": "Algo deu errado. Tenta de novo ou manda email pra hello@consultincusa.com.",
+    "validation": {
+      "first_name_required": "Primeiro nome é obrigatório.",
+      "email_invalid": "Email inválido.",
+      "whatsapp_invalid": "WhatsApp precisa de DDI, ex: +55 11 99999 9999.",
+      "country_required": "Escolhe seu país de origem.",
+      "opt_in_required": "Precisamos de sua autorização pra enviar WhatsApp."
+    }
+  },
+  "footer": {
+    "tagline": "Founders imigrantes, bem-vindos.",
+    "rights": "© consultincusa. Todos os direitos reservados.",
+    "disclaimer": "Não somos advogados nem contadores. Conteúdo aqui é educativo, não conselho jurídico ou fiscal."
+  },
+  "lang": {
+    "en": "English",
+    "pt": "Português",
+    "es": "Español"
+  }
+}

@@ -1,0 +1,21 @@
+name = "consultincusa-web"
+compatibility_date = "2025-05-01"
+pages_build_output_dir = "dist"
+
+# D1 binding for Pages Functions
+# After running `npm run db:create`, paste the returned database_id below
+[[d1_databases]]
+binding = "DB"
+database_name = "consultincusa_db"
+database_id = "REPLACE_WITH_D1_ID_AFTER_db:create"
+
+# Public-facing env vars (non-secret, ok to commit)
+[vars]
+PUBLIC_SITE_URL = "https://consultincusa.com"
+
+# Secrets (set via `wrangler pages secret put NAME` — DO NOT commit values)
+# - META_ACCESS_TOKEN          : Meta WhatsApp Cloud API permanent access token
+# - WABA_ID                    : WhatsApp Business Account ID
+# - PHONE_NUMBER_ID            : Meta-issued phone number ID
+# - WEBHOOK_VERIFY_TOKEN       : random string used to verify webhook subscription
+# - ALERT_WEBHOOK_URL          : Slack/Discord/Zapier URL fired when a lead replies

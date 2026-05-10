@@ -1,0 +1,20 @@
+{
+  "name": "consultincusa-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "pages:dev": "wrangler pages dev dist --d1 DB=consultincusa_db --compatibility-date=2025-05-01",
+    "db:create": "wrangler d1 create consultincusa_db",
+    "db:migrate:local": "wrangler d1 execute consultincusa_db --local --file=./migrations/0001_leads.sql",
+    "db:migrate:remote": "wrangler d1 execute consultincusa_db --remote --file=./migrations/0001_leads.sql"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
+    "clsx": "^2.1.1",
+    "gray-matter": "^4.0.3",
+    "i18next":
