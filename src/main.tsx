@@ -5,4 +5,8 @@ import './index.css'
 import './i18n'
 import { router } from './routes'
 
-createRoot(document.getElem
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <RouterProvider router={router} />
+  </StrictMode>,
+)
