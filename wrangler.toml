@@ -8,12 +8,10 @@ binding = "ASSETS"
 not_found_handling = "single-page-application"
 run_worker_first = true
 
-# D1 binding — uncomment and paste real database_id after running:
-#   npm run db:create
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "consultincusa_db"
-# database_id = "REPLACE_WITH_D1_ID"
+[[d1_databases]]
+binding = "DB"
+database_name = "consultincusa_db"
+database_id = "49453400-a050-4fb8-810d-901cb63a7421"
 
 [vars]
 PUBLIC_SITE_URL = "https://consultincusa.com"
