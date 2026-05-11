@@ -1,47 +1,49 @@
-import { Link, useParams } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
-import { LangSwitcher } from './LangSwitcher'
+import { Link, NavLink } from 'react-router-dom'
+import clsx from 'clsx'
+
+const NAV_LINKS = [
+  { to: '/', label: 'Home' },
+  { to: '/dtc-stack', label: 'DTC' },
+  { to: '/agency-stack', label: 'Agency' },
+  { to: '/newsletter-stack', label: 'Newsletter' },
+]
 
 export function Header() {
-  const { lang = 'en' } = useParams()
-  const { t } = useTranslation()
-
-  const guideSlug =
-    lang === 'es'
-      ? 'como-abrir-llc-en-usa-siendo-no-residente'
-      : lang === 'pt'
-        ? 'como-abrir-llc-nos-eua-sendo-brasileiro'
-        : 'how-to-start-llc-as-non-resident'
-
-  const bookSlug = lang === 'en' ? 'book' : 'agendar'
-
   return (
-    <header className="border-b border-ink-300 bg-white sticky top-0 z-40">
-      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to={`/${lang}`} className="font-bold text-ink-900 text-lg tracking-tight">
+    <header className="border-b-2 border-brand-navy bg-brand-cream sticky top-0 z-40">
+      <div className="max-w-6xl mx-auto px-4 md:px-10 h-16 flex items-center justify-between">
+        <Link to="/" className="font-serif font-bold text-brand-navy text-xl tracking-tight">
           consultincusa
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm">
-          <Link to={`/${lang}`} className="hover:text-brand-600">
-            {t('nav.home')}
-          </Link>
-          <Link to={`/${lang}/${guideSlug}`} className="hover:text-brand-600">
-            {t('nav.guide')}
-          </Link>
-          <Link to={`/${lang}/vs/stripe-atlas`} className="hover:text-brand-600">
-            {t('nav.vs')}
-          </Link>
+        <nav className="hidden md:flex items-center gap-6 text-sm font-bold uppercase tracking-wider">
+          {NAV_LINKS.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.to === '/'}
+              className={({ isActive }) =>
+                clsx(
+                  'transition-colors',
+                  isActive ? 'text-brand-coral' : 'text-brand-navy hover:text-brand-coral',
+                )
+              }
+            >
+              {link.label}
+            </NavLink>
+          ))}
           <Link
-            to={`/${lang}/${bookSlug}`}
-            className="bg-brand-600 text-white px-4 py-2 rounded-md hover:bg-brand-700 transition"
+            to="/book"
+            className="bg-brand-coral text-white px-4 py-2 border-2 border-brand-navy shadow-heritage hover:shadow-heritage-pop transition-all"
           >
-            {t('nav.book')}
+            Book
           </Link>
-          <LangSwitcher />
         </nav>
-        <div className="md:hidden">
-          <LangSwitcher />
-        </div>
+        <Link
+          to="/book"
+          className="md:hidden bg-brand-coral text-white px-3 py-1.5 border-2 border-brand-navy text-sm font-bold uppercase"
+        >
+          Book
+        </Link>
       </div>
     </header>
   )

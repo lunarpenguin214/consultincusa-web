@@ -1,90 +1,57 @@
 import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { Hero } from '../components/Hero'
-import { LeadForm } from '../components/LeadForm'
+import { Link } from 'react-router-dom'
+import { RotatingTagline } from '../components/RotatingTagline'
 import { setSeo } from '../lib/seo'
 
-const META = {
-  en: {
-    title: 'consultincusa — Open Your US LLC in 14 Days',
-    desc: 'Open a US LLC as a non-resident in 14 days. EIN, banking, Form 5472, and WhatsApp human support in English, Português, Español, हिंदी, 中文.',
-  },
-  pt: {
-    title: 'consultincusa — Abra sua LLC nos EUA em 14 dias',
-    desc: 'Abra LLC nos EUA sendo brasileiro em 14 dias. EIN, conta Mercury, Form 5472 e suporte humano em português via WhatsApp.',
-  },
-  es: {
-    title: 'consultincusa — Abre tu LLC en USA en 14 días',
-    desc: 'Abre una LLC en USA siendo no residente en 14 días. EIN, banco Mercury, Form 5472 y soporte humano en español por WhatsApp.',
-  },
-} as const
-
 export function Home() {
-  const { lang = 'en' } = useParams<{ lang: 'en' | 'pt' | 'es' }>()
-  const meta = META[lang as keyof typeof META]
-
   useEffect(() => {
     setSeo({
-      title: meta.title,
-      description: meta.desc,
-      lang,
-      hreflangs: {
-        en: 'https://consultincusa.com/en',
-        pt: 'https://consultincusa.com/pt',
-        es: 'https://consultincusa.com/es',
-      },
-      canonical: `https://consultincusa.com/${lang}`,
+      title: 'consultincusa — Stack Intelligence for Operators',
+      description:
+        "We map your competitors' tech stacks. Industry by industry. Free 1-pager sent in 24 hours.",
+      lang: 'en',
+      canonical: 'https://consultincusa.com/',
     })
-  }, [lang, meta])
+  }, [])
 
   return (
-    <>
-      <Hero />
-      <section id="lead-form" className="bg-ink-100/30 py-16">
-        <div className="max-w-2xl mx-auto px-4">
-          <LeadForm />
+    <div className="bg-brand-cream text-brand-navy">
+      <section className="max-w-5xl mx-auto px-4 md:px-10 py-24 text-center">
+        <p className="text-xs uppercase tracking-widest font-bold">
+          CONSULTINCUSA · STACK INTELLIGENCE
+        </p>
+        <RotatingTagline className="mt-4 block" />
+        <h1 className="mt-6 font-serif text-5xl md:text-8xl font-bold tracking-tight leading-[1.05]">
+          Know their stack.
+        </h1>
+        <p className="mt-6 text-xl text-ink-500 max-w-2xl mx-auto">
+          We map the tools your competitors use. Industry by industry. Free 1-pager.
+        </p>
+        <p className="mt-12 text-sm uppercase tracking-widest font-bold">Pick your industry</p>
+        <div className="mt-6 grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <Link
+            to="/dtc-stack"
+            className="bg-brand-paper border-2 border-brand-navy shadow-heritage hover:shadow-heritage-pop p-8 transition-all text-left"
+          >
+            <h2 className="font-serif text-2xl font-bold">DTC E-commerce</h2>
+            <p className="mt-2 text-sm text-ink-500">$1M-$10M brands</p>
+          </Link>
+          <Link
+            to="/agency-stack"
+            className="bg-brand-paper border-2 border-brand-navy shadow-heritage hover:shadow-heritage-pop p-8 transition-all text-left"
+          >
+            <h2 className="font-serif text-2xl font-bold">Performance Agencies</h2>
+            <p className="mt-2 text-sm text-ink-500">5-50 people</p>
+          </Link>
+          <Link
+            to="/newsletter-stack"
+            className="bg-brand-paper border-2 border-brand-navy shadow-heritage hover:shadow-heritage-pop p-8 transition-all text-left"
+          >
+            <h2 className="font-serif text-2xl font-bold">Newsletter Creators</h2>
+            <p className="mt-2 text-sm text-ink-500">$100K-$2M ARR</p>
+          </Link>
         </div>
       </section>
-      <section className="py-16 max-w-5xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-ink-900 text-center mb-12">
-          What you get with consultincusa
-        </h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <Feature
-            title="14-day formation"
-            body="LLC + EIN + bank account, end-to-end, in 14 days. Or money back AND we keep working."
-          />
-          <Feature
-            title="In your language"
-            body="English, Português, Español, हिंदी, 中文. Every form, every call, every WhatsApp message."
-          />
-          <Feature
-            title="Form 5472 included"
-            body="Year 1 included. Other services charge $899-$1,999/year for this. We don't."
-          />
-          <Feature
-            title="Mercury rescue path"
-            body="If Mercury says no, we don't quit. We route to Relay, Wise, or in-person — whatever it takes."
-          />
-          <Feature
-            title="Real human anchor"
-            body="Your WhatsApp anchor. Real person in your community. 1-hour response during business hours."
-          />
-          <Feature
-            title="Skool community"
-            body="Skool community of newcomer founders. Cohort calls, wins feed, regional chat in your language."
-          />
-        </div>
-      </section>
-    </>
-  )
-}
-
-function Feature({ title, body }: { title: string; body: string }) {
-  return (
-    <div className="border border-ink-300 rounded-lg p-6 hover:shadow-md transition">
-      <h3 className="font-bold text-ink-900 text-lg">{title}</h3>
-      <p className="mt-2 text-ink-500 text-sm">{body}</p>
     </div>
   )
 }

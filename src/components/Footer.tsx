@@ -1,53 +1,53 @@
-import { useTranslation } from 'react-i18next'
-import { useParams, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export function Footer() {
-  const { t } = useTranslation()
-  const { lang = 'en' } = useParams()
-
   return (
-    <footer className="border-t border-ink-300 bg-ink-100/50 mt-12">
-      <div className="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8 text-sm">
+    <footer className="border-t-2 border-brand-navy bg-brand-cream mt-auto">
+      <div className="max-w-6xl mx-auto px-4 md:px-10 py-10 grid md:grid-cols-3 gap-8 text-sm">
         <div>
-          <p className="font-bold text-ink-900">consultincusa</p>
-          <p className="mt-2 text-ink-500">{t('footer.tagline')}</p>
+          <p className="font-serif font-bold text-brand-navy text-lg">consultincusa</p>
+          <p className="mt-2 text-ink-500">
+            Stack intelligence for operators. Industry by industry.
+          </p>
         </div>
         <div>
-          <p className="font-semibold text-ink-900 mb-2">{t('nav.guide')}</p>
+          <p className="font-bold uppercase tracking-wider text-brand-navy mb-2">Industries</p>
           <ul className="space-y-1 text-ink-500">
             <li>
-              <Link to={`/${lang}/how-to-start-llc-as-non-resident`} className="hover:text-brand-600">
-                How to Start an LLC
+              <Link to="/dtc-stack" className="hover:text-brand-coral">
+                DTC E-commerce
               </Link>
             </li>
             <li>
-              <Link to={`/${lang}/vs/stripe-atlas`} className="hover:text-brand-600">
-                vs Stripe Atlas
+              <Link to="/agency-stack" className="hover:text-brand-coral">
+                Performance Agencies
               </Link>
             </li>
             <li>
-              <Link to={`/${lang}/form-5472`} className="hover:text-brand-600">
-                Form 5472 explained
+              <Link to="/newsletter-stack" className="hover:text-brand-coral">
+                Newsletter Creators
               </Link>
             </li>
           </ul>
         </div>
         <div>
-          <p className="font-semibold text-ink-900 mb-2">Contact</p>
+          <p className="font-bold uppercase tracking-wider text-brand-navy mb-2">Contact</p>
           <ul className="space-y-1 text-ink-500">
-            <li>hello@consultincusa.com</li>
-            <li>WhatsApp: +1 (XXX) XXX-XXXX</li>
             <li>
-              <Link to={`/${lang}/${lang === 'en' ? 'book' : 'agendar'}`} className="hover:text-brand-600">
-                {t('nav.book')}
+              <a href="mailto:hello@consultincusa.com" className="hover:text-brand-coral">
+                hello@consultincusa.com
+              </a>
+            </li>
+            <li>
+              <Link to="/book" className="hover:text-brand-coral">
+                Book a 15-min call
               </Link>
             </li>
           </ul>
         </div>
       </div>
       <div className="border-t border-ink-300 py-4 px-4 text-xs text-ink-500 text-center">
-        <p>{t('footer.rights')}</p>
-        <p className="mt-1 max-w-2xl mx-auto">{t('footer.disclaimer')}</p>
+        <p>© {new Date().getFullYear()} consultincusa. All rights reserved.</p>
       </div>
     </footer>
   )
