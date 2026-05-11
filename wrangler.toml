@@ -1,17 +1,21 @@
 name = "consultincusa-web"
+main = "worker.ts"
 compatibility_date = "2025-05-01"
-pages_build_output_dir = "dist"
 
-# D1 binding for Pages Functions
-# After running `npm run db:create`, paste the returned database_id below
-[[d1_databases]]
-binding = "DB"
-database_name = "consultincusa_db"
-database_id = "REPLACE_WITH_D1_ID_AFTER_db:create"
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
 
-# Public-facing env vars (non-secret, ok to commit)
+# D1 binding — uncomment and paste real database_id after running:
+#   npm run db:create
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "consultincusa_db"
+# database_id = "REPLACE_WITH_D1_ID"
+
 [vars]
 PUBLIC_SITE_URL = "https://consultincusa.com"
 
-# Secrets (set via `wrangler pages secret put NAME` — DO NOT commit values)
+# Secrets (set via `wrangler secret put NAME` — DO NOT commit values):
 #  - SLACK_LEAD_WEBHOOK  : Slack incoming webhook URL for #leads channel

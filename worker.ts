@@ -1,7 +1,8 @@
 import { z } from 'zod'
 
 interface Env {
-  DB: D1Database
+  ASSETS: Fetcher
+  DB?: D1Database
   SLACK_LEAD_WEBHOOK?: string
 }
 
@@ -11,7 +12,17 @@ const LeadSchema = z.object({
   source: z.string().max(200).optional(),
 })
 
-export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
+export default {
+  async fetch(request: Request, env: Env): Promise<Response> {
+    const url = new URL(request.url)
+    if (url.pathname === '/api/leads' && request.method === 'POST') {
+      return handleLeads(request, env)
+    }
+    return env.ASSETS.fetch(request)
+  },
+} satisfies ExportedHandler<Env>
+
+async function handleLeads(request: Request, env: Env): Promise<Response> {
   let body: unknown
   try {
     body = await request.json()
@@ -25,6 +36,11 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   }
   const lead = parsed.data
   const id = crypto.randomUUID()
+
+  if (!env.DB) {
+    console.error('D1 binding missing — lead not persisted')
+    return json({ error: 'Database not configured' }, 503)
+  }
 
   try {
     await env.DB.prepare(

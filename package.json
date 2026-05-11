@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "pages:dev": "wrangler pages dev dist --d1 DB=consultincusa_db --compatibility-date=2025-05-01",
+    "dev:cf": "wrangler dev",
+    "deploy": "wrangler deploy",
     "db:create": "wrangler d1 create consultincusa_db",
     "db:migrate:local": "wrangler d1 execute consultincusa_db --local --file=./migrations/0002_simplify_leads.sql",
     "db:migrate:remote": "wrangler d1 execute consultincusa_db --remote --file=./migrations/0002_simplify_leads.sql"
