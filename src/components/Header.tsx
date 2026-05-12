@@ -3,6 +3,7 @@ import clsx from 'clsx'
 
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
   { to: '/dtc-stack', label: 'DTC' },
   { to: '/agency-stack', label: 'Agency' },
   { to: '/newsletter-stack', label: 'Newsletter' },

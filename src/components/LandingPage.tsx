@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { RotatingTagline } from './RotatingTagline'
 import { LeadFormSimple } from './LeadFormSimple'
 import { MonogramAvatar } from './MonogramAvatar'
@@ -20,7 +21,7 @@ export function LandingPage({ config }: { config: IndustryConfig }) {
     <div className="bg-brand-cream text-brand-navy">
       <section className="max-w-5xl mx-auto px-4 md:px-10 py-16 md:py-24">
         <p className="text-xs uppercase tracking-widest text-brand-navy font-bold">
-          CONSULTINCUSA · STACK INTELLIGENCE
+          CAPITAL · SYSTEMS · OPERATIONS · STACK INTELLIGENCE FOR {config.industryShort.toUpperCase()}
         </p>
         <RotatingTagline className="mt-4 block" />
         <h1 className="mt-6 font-serif text-5xl md:text-7xl font-bold tracking-tight leading-[1.05]">
@@ -29,6 +30,12 @@ export function LandingPage({ config }: { config: IndustryConfig }) {
         <p className="mt-6 text-lg md:text-xl text-ink-500 max-w-2xl">
           We map your competitors' tech stacks. {config.industryLabel}, tool by tool.
           Free 1-pager sent in 24 hours.
+        </p>
+        <p className="mt-3 text-sm text-ink-500 max-w-2xl">
+          Stack intel is where we start. We also place capital, build systems, and audit ops.{' '}
+          <Link to="/about" className="text-brand-coral font-bold hover:underline">
+            Learn how →
+          </Link>
         </p>
         <div className="mt-8 max-w-xl">
           <LeadFormSimple industry={config.slug} />
