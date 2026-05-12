@@ -146,3 +146,103 @@ export const BRAND = {
     'No fee structure described on this site is a guarantee of approval, funding, rate, or term.',
   ],
 } as const
+
+export const LENSES = [
+  {
+    id: 'operations',
+    label: 'Operations Bleed',
+    promise: 'Find $50K+ of waste in your annual ops spend in 5 days.',
+    detail:
+      "Vendor consolidation. SOP audits. Hidden subscriptions. The expense category nobody owns. We map every dollar leaving your operation and rank by elimination ROI.",
+  },
+  {
+    id: 'capital',
+    label: 'Capital Stack',
+    promise: 'Replace 80% APR MCAs with $50K-$1M no-doc lines in 14 days.',
+    detail:
+      "Stacked merchant cash advances. Underused credit lines. Wrong-fit SBA loans. We unwind the bleeding debt structure and place capital that actually fits your business cycle.",
+  },
+  {
+    id: 'tech',
+    label: 'Tech Stack',
+    promise: 'Cut $30K+/yr from your software bill + add 2 missing tools in 7 days.',
+    detail:
+      "Overlapping tools. Wrong-tier subscriptions. Missing automation. The 5 competitive-gap tools your competitors run that you don't. We map your current stack against operators 1 revenue tier above you.",
+  },
+  {
+    id: 'cfo',
+    label: 'CFO-for-a-week',
+    promise: 'Get a fractional CFO read on your books in 5 days — cash, accruals, hidden expense.',
+    detail:
+      "Books interpreted by an operator who reads them like a brain reads a tax return. Cash flow truth. Accrual mismatches. Hidden expense categories. The questions your accountant should be asking and isn't.",
+  },
+  {
+    id: 'growth',
+    label: 'Growth',
+    promise: 'Find $X in unrealized revenue in your funnel in 5 days.',
+    detail:
+      "Conversion gaps. Pricing left on the table. Email/SMS sequences that should exist but don't. We map the funnel against winners in your category and surface the 3 highest-leverage moves.",
+  },
+] as const
+
+export const TIERS = [
+  {
+    id: 'lens',
+    name: 'Single-Lens Audit',
+    price: '$5,000',
+    note: 'One of 5 lenses · 5-day deliverable',
+    blurb:
+      "Pick one lens. We apply the operating brain to that one angle. Written deliverable, 30-day implementation support, refundable if findings fall short of stated ROI.",
+    bullets: [
+      'One of 5 lenses applied in depth',
+      '5-day diagnostic + 1 readout call',
+      'Written report with prioritized recommendations',
+      '30-day Slack support during implementation',
+      'Refundable if findings fall short of stated ROI',
+    ],
+    ctaLabel: 'Pick a lens',
+    ctaHref: '/book?intent=lens-audit',
+    featured: false,
+    featuredLabel: '',
+  },
+  {
+    id: 'eagle',
+    name: 'Eagle-Eye Review',
+    price: '$10,000-$15,000',
+    note: 'All 5 lenses · 2-week deliverable · max 4/quarter',
+    blurb:
+      "All 5 lenses applied to your full business at once. The seeing you'd hire 5 separate consultants for, delivered by one operator brain. Brand-level strategic deliverable. 90-day implementation roadmap.",
+    bullets: [
+      'All 5 lenses applied at once',
+      '2-week diagnostic + 3 readout calls',
+      'Brand-level strategic deliverable',
+      '90-day implementation roadmap',
+      'Capital placement included if applicable (lender pays our fee separately)',
+      'Refundable if findings fall short of stated ROI',
+    ],
+    ctaLabel: 'Book Eagle-Eye',
+    ctaHref: '/book?intent=eagle-eye',
+    featured: true,
+    featuredLabel: 'Most engagements at this tier',
+  },
+  {
+    id: 'concierge',
+    name: 'Concierge',
+    price: '$25,000+',
+    note: 'Eagle-Eye + 90-day execution partnership',
+    blurb:
+      "For complex setups. The Eagle-Eye review plus 90 days of direct execution partnership. Weekly check-ins. Slack channel. Direct dial. We become temporary part of your operating team.",
+    bullets: [
+      'Everything in Eagle-Eye',
+      '90-day execution partnership',
+      'Weekly strategic check-ins',
+      'Dedicated Slack channel',
+      'Direct dial access for urgent decisions',
+      'Custom workflow / system builds included',
+    ],
+    ctaLabel: 'Inquire about Concierge',
+    ctaHref: '/book?intent=concierge',
+    featured: false,
+    featuredLabel: '',
+  },
+] as const

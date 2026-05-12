@@ -66,6 +66,22 @@ function upsertMeta(attr: 'name' | 'property', key: string, value: string) {
   el.setAttribute('content', value)
 }
 
+export const ORGANIZATION_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'consultincusa',
+  legalName: 'Consultinc LLC',
+  url: 'https://consultincusa.com',
+  email: 'hello@consultincusa.com',
+  description:
+    'Capital, systems, and operations consultancy for owner-operators doing $500K-$50M revenue.',
+  founder: {
+    '@type': 'Person',
+    name: 'Yomama',
+  },
+  sameAs: [] as string[],
+}
+
 function upsertLink(rel: string, href: string) {
   let el = document.querySelector(`link[rel="${rel}"]`)
   if (!el) {
