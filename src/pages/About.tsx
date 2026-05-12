@@ -49,8 +49,6 @@ export function About() {
 
       {/* PILLARS */}
       <section className="max-w-6xl mx-auto px-4 md:px-10 py-16 border-t-2 border-brand-navy">
-        <p className="text-sm uppercase tracking-widest font-bold mb-3">Three roles.</p>
-        <h2 className="font-serif text-3xl md:text-5xl font-bold mb-12">One operating brain.</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {BRAND.pillars.map((p) => (
             <ThreeRolesCard key={p.key} pillar={p} showProducts />

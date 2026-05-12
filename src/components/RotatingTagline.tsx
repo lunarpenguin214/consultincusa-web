@@ -2,21 +2,21 @@ import { useState, useEffect } from 'react'
 import clsx from 'clsx'
 
 const ROTATIONS = [
+  'Their lender said yes in 48 hours. Yours said maybe in 30 days.',
+  "Their MCA refi'd into a 7% term loan. Yours bleeds daily at 80% APR.",
+  'Their SBA 7(a) closed in 14 days. Yours is stuck on document #6.',
+  'Their CFO sleeps. Yours rebuilds the cash schedule at 11pm Sundays.',
+  'Their close took 9 minutes. Yours took 9 days.',
+  "They cleaned the vendor stack and saved $60K/yr. You're still on 14 tools.",
+  'Their software gets opened daily. Yours got built and forgotten.',
+  'Their broker delivered. Yours disappeared after the contract.',
+  'Their tax return tells a clean story. Yours has 8 surprises.',
+  'They got the $500K line. You got the runaround.',
+  'Their stacked debt unwound. Yours stacked higher last week.',
+  "They closed Q4 with 6 tools. You're juggling 14.",
   'We diagnose first, recommend second.',
-  'A working desk, not a directory.',
-  'Capital. Systems. Operations. One table.',
-  'Math first. Meetings second.',
-  '"No" is a real answer here.',
-  'Paid by closers, not by seekers.',
   'Refundable if we recommend not engaging.',
-  'Built by operators, for operators.',
-  'More businesses fail from misdiagnosing cash than from cash itself.',
-  'Run the math before you run the meeting.',
-  'Borderline files are where we earn our keep.',
-  'Yes / no / not-yet — never "maybe forever."',
-  'Three roles. One operating brain.',
-  'For owner-operators doing $500K–$50M.',
-  'SBA-savvy without the SBA-lifer brittleness.',
+  '"No" is a real answer here.',
 ]
 
 export function RotatingTagline({ className }: { className?: string }) {
