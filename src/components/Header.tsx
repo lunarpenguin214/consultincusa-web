@@ -3,6 +3,8 @@ import clsx from 'clsx'
 
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
+  { to: '/offers', label: 'Offers' },
+  { to: '/insights', label: 'Insights' },
   { to: '/about', label: 'About' },
   { to: '/dtc-stack', label: 'DTC' },
   { to: '/agency-stack', label: 'Agency' },
@@ -16,7 +18,7 @@ export function Header() {
         <Link to="/" className="font-serif font-bold text-brand-navy text-xl tracking-tight">
           consultincusa
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-bold uppercase tracking-wider">
+        <nav className="hidden md:flex items-center gap-5 text-sm font-bold uppercase tracking-wider">
           {NAV_LINKS.map((link) => (
             <NavLink
               key={link.to}

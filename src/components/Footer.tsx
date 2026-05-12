@@ -9,7 +9,7 @@ export function Footer() {
           {BRAND.pillarLine} · under one roof.
         </p>
         <p className="text-sm uppercase tracking-widest opacity-70">{BRAND.tagline}</p>
-        <div className="mt-10 grid md:grid-cols-3 gap-8 text-sm">
+        <div className="mt-10 grid md:grid-cols-4 gap-8 text-sm">
           <div>
             <p className="font-bold uppercase tracking-widest mb-3">{BRAND.name}</p>
             <p className="opacity-70">
@@ -27,6 +27,16 @@ export function Footer() {
               <li>
                 <Link to="/" className="hover:text-brand-coral">
                   Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/offers" className="hover:text-brand-coral">
+                  Offers
+                </Link>
+              </li>
+              <li>
+                <Link to="/insights" className="hover:text-brand-coral">
+                  Insights
                 </Link>
               </li>
               <li>
@@ -53,6 +63,21 @@ export function Footer() {
                 <Link to="/book" className="hover:text-brand-coral">
                   Book the 15-min call
                 </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-bold uppercase tracking-widest mb-3">Other tools</p>
+            <ul className="space-y-2 opacity-70 text-sm">
+              <li>
+                <a
+                  href="https://voicehours.consultincllc.workers.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-coral"
+                >
+                  VoiceHours — voice business hours tool ↗
+                </a>
               </li>
             </ul>
           </div>
