@@ -26,8 +26,14 @@ export function InsightPost() {
         description: post.frontmatter.description,
         author: {
           '@type': 'Person',
-          name: post.frontmatter.author ?? 'Yomama',
-          url: `https://${BRAND.domain}/about`,
+          name: post.frontmatter.author ?? 'Max Legend',
+          jobTitle: post.frontmatter.authorTitle,
+          url: post.frontmatter.authorTwitter
+            ? `https://x.com/${post.frontmatter.authorTwitter.replace('@', '')}`
+            : `https://${BRAND.domain}/about`,
+          sameAs: post.frontmatter.authorTwitter
+            ? [`https://x.com/${post.frontmatter.authorTwitter.replace('@', '')}`]
+            : undefined,
         },
         publisher: {
           '@type': 'Organization',
@@ -57,9 +63,36 @@ export function InsightPost() {
         <h1 className="mt-6 font-serif text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
           {post.frontmatter.title}
         </h1>
-        <p className="mt-4 text-sm text-ink-500 uppercase tracking-widest font-bold">
-          {post.frontmatter.date} · {Math.ceil(post.content.split(' ').length / 200)} min read
-        </p>
+        <div className="mt-6 flex items-center gap-3 text-sm border-t-2 border-b-2 border-ink-300 py-4">
+          <div className="flex-1">
+            <p className="font-bold text-brand-navy">
+              By {post.frontmatter.author}
+              {post.frontmatter.authorTitle && (
+                <span className="font-normal text-ink-500">
+                  {' '}· {post.frontmatter.authorTitle}
+                </span>
+              )}
+            </p>
+            {post.frontmatter.authorTwitter && (
+              <a
+                href={`https://x.com/${post.frontmatter.authorTwitter.replace('@', '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-coral hover:underline text-sm"
+              >
+                {post.frontmatter.authorTwitter} on X →
+              </a>
+            )}
+          </div>
+          <div className="text-right">
+            <p className="uppercase tracking-widest text-xs font-bold text-ink-500">
+              {post.frontmatter.date}
+            </p>
+            <p className="text-xs text-ink-500">
+              {Math.ceil(post.content.split(' ').length / 200)} min read
+            </p>
+          </div>
+        </div>
         <div className="mt-10 prose prose-lg max-w-none">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
