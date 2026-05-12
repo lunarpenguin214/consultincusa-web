@@ -5,6 +5,8 @@ export interface ArticleFrontmatter {
   description: string
   date: string
   author?: string
+  authorTitle?: string
+  authorTwitter?: string
   updated_at?: string
 }
 

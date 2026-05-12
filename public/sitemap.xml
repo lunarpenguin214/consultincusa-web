@@ -40,4 +40,19 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://consultincusa.com/insights/53-percent-failing-businesses</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://consultincusa.com/insights/slack-vs-discord-vs-teams-what-5-operators-chose</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://consultincusa.com/insights/tally-vs-google-forms-vs-typeform-what-5-operators-picked</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
